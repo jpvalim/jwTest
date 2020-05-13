@@ -3,6 +3,7 @@ package jpv.tests;
 import org.junit.Test;
 
 import jpv.core.BaseTest;
+import jpv.pages.BiblePage;
 import jpv.pages.HomePage;
 
 public class TestBiblia extends BaseTest {

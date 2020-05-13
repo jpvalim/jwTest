@@ -1,4 +1,4 @@
-package jpv.tests;
+package jpv.pages;
 
 import static jpv.core.DriverFactory.getDriver;
 
