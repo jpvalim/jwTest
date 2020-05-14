@@ -2,8 +2,6 @@ package jpv.pages;
 
 import static jpv.core.DriverFactory.getDriver;
 
-import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -19,8 +17,9 @@ public class BiblePage extends BasePage {
 		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//div[@id='jsFullScreenLoadingIndicator']")));
 		selecionarCapitulo(capitulo);
 		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//div[@id='jsFullScreenLoadingIndicator']")));
+		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@class='vjs-control-bar']")));
 		selecionarVersiculo(verso);
-		getDriver().manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='contextMenuButton']")));
 		play();
 		
 	}
